@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 public interface IMenu extends InventoryHolder {
     default @NotNull Inventory getInventory(){ return getCachedInventory(); }
-    IMenu setPlayer();
+    IMenu setPlayer(Player player);
     Player getViewer();
     IMenu compile();
     Inventory getCachedInventory();

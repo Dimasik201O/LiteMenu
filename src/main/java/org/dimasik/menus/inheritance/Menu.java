@@ -10,6 +10,7 @@ import org.dimasik.menus.implementation.IMenu;
 public abstract class Menu implements IMenu {
     @Getter
     protected Player viewer;
+    @Getter
     protected Inventory inventory;
     private final JavaPlugin plugin;
 
@@ -44,5 +45,9 @@ public abstract class Menu implements IMenu {
         } else {
             Bukkit.getScheduler().runTask(plugin, openTask);
         }
+    }
+
+    public final Inventory getCachedInventory(){
+        return inventory;
     }
 }
