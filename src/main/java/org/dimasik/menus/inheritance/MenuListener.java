@@ -1,6 +1,7 @@
 package org.dimasik.menus.inheritance;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
@@ -25,6 +26,7 @@ public abstract class MenuListener implements IMenuListener {
     protected abstract void onClose(InventoryCloseEvent event, Menu menu, Player player);
 
     @Override
+    @EventHandler
     public final void onClick(InventoryClickEvent event) {
         Inventory inventory = event.getView().getTopInventory();
         InventoryHolder holder = inventory.getHolder();
@@ -43,6 +45,7 @@ public abstract class MenuListener implements IMenuListener {
     }
 
     @Override
+    @EventHandler
     public final void onClose(InventoryCloseEvent event) {
         Inventory inventory = event.getView().getTopInventory();
         InventoryHolder holder = inventory.getHolder();
