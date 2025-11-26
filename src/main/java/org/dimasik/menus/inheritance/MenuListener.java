@@ -11,11 +11,11 @@ import org.dimasik.menus.implementation.IMenuListener;
 import java.util.concurrent.CompletableFuture;
 
 public abstract class MenuListener implements IMenuListener {
-    private final Class<Menu> source;
+    private final Class<? extends Menu> source;
     private final JavaPlugin plugin;
     private final boolean async;
 
-    public MenuListener(Class<Menu> source, JavaPlugin plugin, boolean async){
+    public MenuListener(Class<? extends Menu> source, JavaPlugin plugin, boolean async){
         this.source = source;
         this.plugin = plugin;
         this.async = async;
